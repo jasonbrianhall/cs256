@@ -1,0 +1,33 @@
+// INTRO28.CPP--Example from Chapter 3, "An Introduction to C++"
+
+#include <iostream.h>
+
+int main()
+{
+	float hours[52];
+	int i;
+	int nelem;
+
+	// Initialize the array
+	for (i = 0; i < 52; i++)
+		hours[i] = 0;
+
+/*	// Store four values in array
+	hours[0] = 32.5;
+	hours[1] = 44.0;
+	hours[2] = 40.5;
+	hours[3] = 38.0;
+*/
+	for(i=0;i<4;i++)
+	{
+		cout<<"Please input the "<<i+1<<"th element\n";
+		cin>>hours[i];
+	}
+	// Retrieve values and show their addresses
+	cout << "Element \tValue \tAddress\n";
+	for (i = 0; i < 4; i++)
+		cout << "hours[" << i << "]" << '\t'
+			  << hours[i] << '\t' << &hours[i] << '\n';
+
+	return 0;
+}

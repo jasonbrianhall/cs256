@@ -1,0 +1,52 @@
+
+ Volume in drive C has no label
+ Volume Serial Number is 2079-00F6
+ Directory of C:\CS256
+
+.              <DIR>        04-26-01  9:03p .
+..             <DIR>        04-26-01  9:03p ..
+MPX            <DIR>        04-26-01  9:05p MPX
+TEST           <DIR>        04-26-01  9:09p TEST
+CD       C           2,946  04-22-01 12:56a CD.C
+CD       H             138  03-05-01  4:03p CD.H
+CD       OBJ         4,172  04-26-01  9:18p CD.OBJ
+COMHAND  C           7,350  04-24-01  8:17p COMHAND.C
+COMHAND  H             824  04-16-01  4:04p COMHAND.H
+COMHAND  OBJ         7,448  04-26-01  9:18p COMHAND.OBJ
+DEVDRIVE H           4,544  04-21-01  5:22p DEVDRIVE.H
+DRIVERS  C          22,790  04-22-01  1:48a DRIVERS.C
+DRIVERS  H           3,950  04-22-01  1:46a DRIVERS.H
+DRIVERS  OBJ         6,368  04-26-01  9:18p DRIVERS.OBJ
+EXE                      0  05-07-01  6:45p exe
+HELLO    C              96  04-26-01 12:51p HELLO.C
+HELP     C           3,111  04-26-01  1:56p HELP.C
+HELP     H              32  04-21-01 11:49p HELP.H
+HELP     OBJ         2,746  04-26-01  9:18p HELP.OBJ
+IOSCHD   C          10,325  04-24-01  8:18p IOSCHD.C
+IOSCHD   H           1,707  04-21-01  5:22p IOSCHD.H
+IOSCHD   OBJ         6,456  04-26-01  9:18p IOSCHD.OBJ
+MPX_DATE C           6,868  04-22-01  1:04a MPX_DATE.C
+MPX_DATE H             277  03-05-01  4:04p MPX_DATE.H
+MPX_DATE OBJ         4,896  04-26-01  9:18p MPX_DATE.OBJ
+MPX_SUPT C          23,795  03-13-01  9:37p MPX_SUPT.C
+MPX_SUPT H           6,102  01-28-01  9:06p MPX_SUPT.H
+MPX_SUPT OBJ         9,672  04-26-01  9:18p MPX_SUPT.OBJ
+NEWMAIN  C           2,645  04-23-01 11:33p NEWMAIN.C
+NEWMAIN  OBJ         2,874  04-26-01  9:18p NEWMAIN.OBJ
+PCB_CONT BAK        36,600  04-26-01  9:18p PCB_CONT.BAK
+PCB_CONT H           2,918  04-22-01  1:26a PCB_CONT.H
+PCB_CONT OBJ        27,502  04-26-01  9:18p PCB_CONT.OBJ
+PCB_CONT C          36,602  04-26-01  9:21p PCB_CONT.C
+PCB_CO~1 C          36,934  04-26-01 11:35a PCB_CO~1.C
+PCB_CO~2 C          36,476  04-26-01 11:28a PCB_CO~2.C
+TRMDRIVE C          13,306  04-23-01 11:34p TRMDRIVE.C
+TRMDRIVE H           2,350  04-15-01  2:37p TRMDRIVE.H
+TRMDRIVE OBJ         5,762  04-26-01  9:18p TRMDRIVE.OBJ
+TRYING   PRJ         6,859  04-26-01  9:18p TRYING.PRJ
+TRYING   DSK           435  04-26-01  9:21p TRYING.DSK
+TRYING   EXE        98,129  04-26-01  9:18p TRYING.EXE
+VERSION  C             366  04-16-01  4:23p VERSION.C
+VERSION  H              38  03-05-01  4:01p VERSION.H
+VERSION  OBJ           877  04-26-01  9:18p VERSION.OBJ
+        41 file(s)        447,286 bytes
+         4 dir(s)       13,691.86 MB free

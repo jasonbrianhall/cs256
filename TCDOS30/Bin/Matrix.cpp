@@ -1,0 +1,111 @@
+//MATRIX.CPP Implementation of Sparse_matrix class.
+//Written by Jenny and Xueming.
+
+#include <iostream.h>
+#include "matrix.h"
+
+Sparse_matrix::Sparse_matrix(int R, int C) //Constructor.
+{
+  no_rows = R;
+  no_cols = C;
+  for (int i=0; i<no_rows; i++)
+		matrix[i]=NULL;
+}
+
+Sparse_matrix::~Sparse_matrix()            //Destructor.
+{
+  for (int i=0; i<no_rows; i++)
+	  {
+	  int k=0; element * cur = matrix[i];
+	  while (matrix[i] != NULL)
+	     {k=k+1; cur=cur->Next;}
+	  for (int j=k; j>0; j--) {delete (&(matrix[i]+j)->value);
+				   delete (&(matrix[i]+j)->col_no);
+				   delete (matrix[i]+j)->Next;}
+	  if(matrix[i]!=NULL) delete matrix[i];
+	  }
+  if (matrix != NULL) delete matrix;
+}
+
+//Insert an item in the sparse matrix.
+int Sparse_matrix::put_element(double val, int i, int j)
+{
+  if (val==0) {cout << "You should put nonzero element!\n";
+			   return -1; }
+  if (i<0 | i>=no_rows | j<0 | j>=no_cols)
+			  {cout <<"Out of matrix size!\n"; return -1; }
+
+  element *NewItem, *prev;
+  element * curr = matrix[i];
+	  if (curr == NULL)                 //No element is this row.
+		 { NewItem = new element;          //Create a new element.
+		   NewItem->value=val;
+		   NewItem->col_no=j;
+		   NewItem->Next=NULL;
+		   matrix[i] = NewItem;            //Insert it in this row.
+		   return 0;                       //Successfully return.
+		 }
+	  else                                 //This row is not empty.
+		 {
+		  while(curr!=NULL && curr->col_no<j) //Traverse pointer to locate
+			  {prev = curr; curr=curr->Next;} //the new element position.
+
+		  if (curr!=NULL && curr->col_no==j)  //Already exists, update a new
+			 {curr->value=val; return 0;}     //value.
+
+		  else                                //In the middle or end.
+			 {
+			  NewItem = new element;
+			  NewItem->value=val;
+			  NewItem->col_no= j;
+			  NewItem->Next=NULL;
+			  if (curr == NULL)               //At the end.
+				  prev->Next=NewItem;
+			  else                            //In the middle.
+				 {
+				  prev->Next=NewItem;
+				  NewItem->Next=curr;
+				 }
+			  return 0;
+			 }
+		 }
+}
+
+//Get an element from the sparse matrix.
+int Sparse_matrix::get_element(double &val, int i, int j)
+{
+  if (i<0 | i>=no_rows | j<0 | j>= no_cols)
+	 {cout << "Out of matrix size!\n"; return -1;}
+  element * curr = matrix[i];
+  while(curr != NULL)                        //Traverse pointer until find
+	 {                                       //the position.
+	   if(j==curr->col_no) { val=curr->value; return 0;}
+	   else curr = curr->Next;
+	 }
+  return -1;
+}
+
+//Delete an element from the sparse matrix.
+int Sparse_matrix::delete_element(int i, int j)
+{
+  if (i<0 | i>=no_rows | j<0 | j>= no_cols)
+	 {cout << "Out of matrix size!\n"; return -1;}
+  element *prev = matrix[i];
+  element *curr = prev->Next;
+  if(prev->col_no==j)                    //Find element at the beginning.
+	 { delete prev;
+	   matrix[i]=curr;
+	   return 0; }
+
+  while(curr != NULL)                    //Traverse pointer to search.
+	 {
+	   if(j==curr->col_no)
+		   { prev->Next = curr->Next;    //Got, connect prev to next.
+			 delete curr;                //Delete current.
+			 return 0; }
+	   else
+		   { prev=curr;
+			 curr=curr->Next; }
+	 }
+  return -1;                             //Didn't find, return -1.
+}
